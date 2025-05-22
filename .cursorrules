@@ -1,1 +1,15 @@
-- tech sf
+- tech stack:
+  - nextjs
+  - tailwindcss
+  - typescript
+  - shadcn/ui
+  - supabase
+  - clerk
+
+use app router
+
+- use shadcn/ui components
+- use supabase for database
+- use clerk for authentication
+- 确保提供的实现都是结构化的，前端card抽象成component然后使用list来进行调用，确保项目的结构化和整洁性
+- 不允许添加用户命令之外的任何内容，只允许一步一步执行用户的指示

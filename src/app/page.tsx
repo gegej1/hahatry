@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import Image from "next/image";
+import { ProjectList } from "@/components/project-list";
 
 export default function Home() {
   return (
@@ -97,37 +97,7 @@ export default function Home() {
           </div>
 
           {/* 项目卡片区域 */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
-            <div className="border rounded-lg overflow-hidden hover:shadow-md transition-shadow">
-              <div className="p-4">
-                <h3 className="text-lg font-medium mb-4">将任何内容变成网站！</h3>
-                <div className="flex justify-center">
-                  <div className="bg-gray-100 rounded-md p-4 flex justify-center">
-                    <div className="flex gap-2">
-                      <div className="w-8 h-8 bg-red-400 rounded flex items-center justify-center text-white">P</div>
-                      <div className="w-8 h-8 bg-blue-400 rounded flex items-center justify-center text-white">W</div>
-                      <div className="w-8 h-8 bg-pink-400 rounded flex items-center justify-center text-white">A</div>
-                      <div className="w-8 h-8 bg-green-400 rounded flex items-center justify-center text-white">X</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="border rounded-lg overflow-hidden hover:shadow-md transition-shadow">
-              <div className="p-4">
-                <div className="aspect-video bg-gray-100 rounded-md mb-4"></div>
-                <h3 className="text-base font-medium">Python Programming for Beginners</h3>
-              </div>
-            </div>
-            
-            <div className="border rounded-lg overflow-hidden hover:shadow-md transition-shadow">
-              <div className="p-4">
-                <div className="aspect-video bg-gray-100 rounded-md mb-4"></div>
-                <h3 className="text-base font-medium">Web App for Night Sky Events</h3>
-              </div>
-            </div>
-          </div>
+          <ProjectList />
         </div>
       </div>
     </div>
