@@ -1,103 +1,135 @@
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="flex flex-col h-full">
+      {/* 顶部导航 */}
+      <header className="flex items-center justify-between p-4 border-b">
+        <div className="flex items-center">
+          <h1 className="text-xl font-semibold">manus</h1>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </header>
+
+      {/* 主要内容区 */}
+      <div className="flex-1 overflow-auto p-6">
+        <div className="max-w-3xl mx-auto">
+          {/* 欢迎消息 */}
+          <div className="mb-8">
+            <h2 className="text-3xl font-semibold mb-2">你好，hongjian gan</h2>
+            <p className="text-xl text-gray-600">我能为你做什么？</p>
+          </div>
+
+          {/* 输入框区域 */}
+          <div className="border rounded-xl shadow-sm mb-8">
+            <div className="p-4">
+              <div className="flex items-center space-x-2 mb-2">
+                <span className="text-gray-500">给 Manus 一个任务...</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Input 
+                  className="flex-1 border-0 focus-visible:ring-0 focus-visible:ring-offset-0"
+                  placeholder="输入您的问题或指令..."
+                />
+              </div>
+            </div>
+            <div className="flex items-center justify-between p-2 border-t">
+              <div className="flex items-center space-x-2">
+                <Button variant="ghost" size="sm">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-paperclip"><path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+                </Button>
+                <Button variant="ghost" size="sm">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-tag"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/><path d="M7 7h.01"/></svg>
+                </Button>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span className="text-sm text-gray-500">1,000 + 300</span>
+                <Button variant="ghost" size="sm">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-mic"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><path d="M12 19v3"/></svg>
+                </Button>
+              </div>
+            </div>
+          </div>
+
+          {/* 快捷功能区 */}
+          <div className="flex flex-wrap gap-2 mb-8">
+            <Button variant="outline" size="sm" className="rounded-full">
+              充电站分布图 <span className="ml-1">↑</span>
+            </Button>
+            <Button variant="outline" size="sm" className="rounded-full">
+              制作 p5.js动画 <span className="ml-1">↑</span>
+            </Button>
+            <Button variant="outline" size="sm" className="rounded-full">
+              动画讲解数学题 <span className="ml-1">↑</span>
+            </Button>
+          </div>
+
+          {/* 分类标签 */}
+          <div className="flex flex-wrap gap-2 mb-8">
+            <Button variant="secondary" size="sm" className="rounded-full bg-black text-white">
+              推荐 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-refresh-cw ml-1"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M3 21v-5h5"/></svg>
+            </Button>
+            <Button variant="outline" size="sm" className="rounded-full">
+              精选
+            </Button>
+            <Button variant="outline" size="sm" className="rounded-full">
+              生活
+            </Button>
+            <Button variant="outline" size="sm" className="rounded-full">
+              研究
+            </Button>
+            <Button variant="outline" size="sm" className="rounded-full">
+              教育
+            </Button>
+            <Button variant="outline" size="sm" className="rounded-full">
+              数据分析
+            </Button>
+            <Button variant="outline" size="sm" className="rounded-full">
+              生产力
+            </Button>
+            <Button variant="outline" size="sm" className="rounded-full">
+              内容创作
+            </Button>
+            <Button variant="outline" size="sm" className="rounded-full">
+              IT与开发
+            </Button>
+          </div>
+
+          {/* 项目卡片区域 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+            <div className="border rounded-lg overflow-hidden hover:shadow-md transition-shadow">
+              <div className="p-4">
+                <h3 className="text-lg font-medium mb-4">将任何内容变成网站！</h3>
+                <div className="flex justify-center">
+                  <div className="bg-gray-100 rounded-md p-4 flex justify-center">
+                    <div className="flex gap-2">
+                      <div className="w-8 h-8 bg-red-400 rounded flex items-center justify-center text-white">P</div>
+                      <div className="w-8 h-8 bg-blue-400 rounded flex items-center justify-center text-white">W</div>
+                      <div className="w-8 h-8 bg-pink-400 rounded flex items-center justify-center text-white">A</div>
+                      <div className="w-8 h-8 bg-green-400 rounded flex items-center justify-center text-white">X</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="border rounded-lg overflow-hidden hover:shadow-md transition-shadow">
+              <div className="p-4">
+                <div className="aspect-video bg-gray-100 rounded-md mb-4"></div>
+                <h3 className="text-base font-medium">Python Programming for Beginners</h3>
+              </div>
+            </div>
+            
+            <div className="border rounded-lg overflow-hidden hover:shadow-md transition-shadow">
+              <div className="p-4">
+                <div className="aspect-video bg-gray-100 rounded-md mb-4"></div>
+                <h3 className="text-base font-medium">Web App for Night Sky Events</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
