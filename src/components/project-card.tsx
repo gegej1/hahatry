@@ -1,11 +1,17 @@
 import React from 'react';
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
+import { Card, CardHeader, CardTitle } from '@/components/ui/card';
 
+// 项目卡片属性定义
 interface ProjectCardProps {
   title: string;
   type: 'website' | 'programming' | 'webapp' | 'custom';
 }
 
+/**
+ * 项目卡片组件 - 根据类型显示不同的内容
+ * @param title 卡片标题
+ * @param type 项目类型
+ */
 export function ProjectCard({ title, type }: ProjectCardProps) {
   return (
     <Card>
